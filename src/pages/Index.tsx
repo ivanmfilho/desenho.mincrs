@@ -1,12 +1,10 @@
 import { useCallback } from 'react'
 import BrandLogo from '@/components/BrandLogo'
-import PdfPreview from '@/components/PdfPreview'
 import ResponsiveFamilyPhoto from '@/components/ResponsiveFamilyPhoto'
 import RevealSection from '@/components/RevealSection'
-import sourcePdfUrl from '@/assets/desenho-colorir-minc-cc8b3.pdf?url'
 import { track } from '@/lib/tracking'
 
-const DOWNLOAD_URL = sourcePdfUrl
+const DOWNLOAD_URL = '/arquivos/desenho-para-colorir-minc.pdf'
 const CAPSULA_DO_TEMPO_URL = '' // Inserir aqui a URL oficial quando estiver disponível.
 
 function DownloadButton() {
@@ -53,7 +51,17 @@ function Index() {
             <span className="paper-label" aria-hidden="true">
               A4
             </span>
-            <PdfPreview />
+            <picture className="paper-preview">
+              <source srcSet="/imagens/desenho-para-colorir-minc.webp" type="image/webp" />
+              <img
+                src="/imagens/desenho-para-colorir-minc.png"
+                alt="Desenho Minc em preto e branco para crianças colorirem."
+                width="1786"
+                height="2525"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </picture>
           </div>
 
           <div className="hero__action hero__action--mobile">

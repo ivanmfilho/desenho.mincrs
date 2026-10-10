@@ -253,35 +253,10 @@
     box-shadow: inset 0 0 0 1px rgb(255 255 255 / 68%);
   }
 
-  .paper-preview {
-    position: relative;
+  .paper-preview img {
     width: 100%;
     aspect-ratio: 210 / 297;
-    overflow: hidden;
-  }
-
-  .paper-preview__fallback,
-  .paper-preview__canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    background: var(--white);
-  }
-
-  .paper-preview__fallback {
-    pointer-events: none;
-  }
-
-  .paper-preview__canvas {
-    opacity: 0;
     object-fit: contain;
-    transition: opacity 180ms ease;
-  }
-
-  .paper-preview.is-rendered .paper-preview__canvas {
-    opacity: 1;
   }
 
   .paper-label {
